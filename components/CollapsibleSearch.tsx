@@ -46,15 +46,34 @@ const CollapsibleSearch = () => {
 					<input
 						className="search"
 						style={{
-							borderRadius: "4px",
-							width: searchBar ? "100%" : "0",
+							font-family: verdana,
+							font-weight: bold,
+							position: absolute,
+							margin: auto,
+							borderRadius: 50%,
+							width: searchBar ? "50px" : "50px",
+							outline: none,
+							border; none,
 							display: searchBar ? "inherit" : "none",
-							transition: "all 0.5s ease-in-out",
-							padding: "0.5rem",
+							transition: "all 0.8s ease-in-out",
+							padding: 0 80px 0 20px,
+							opacity: 0,
+							z-index: 5,
 							fontSize: "1rem",
+							&:hover {
+								cursor: pointer,
+							}
+							&:focus {
+								width: 300px,
+								opacity: 1,
+								cursor: text,
+							}
+							&:focus ~ .search {
+								right: -250px,
+								z-index: 6,
+							}
 						}}
-						placeholder="Search"
-						onFocus={onSearchFocus}
+						placeholder="Search..."
 						onChange={(e) => setSearchValue(e.target.value)}
 						onBlur={onSearchBlur}
 						autoFocus
